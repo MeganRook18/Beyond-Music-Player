@@ -22,6 +22,7 @@
   height: 95vh
   width: 90%
   margin: 5% auto
+  padding: 0 20px
   display: flex
   justify-content: space-between
   @media screen and (max-width: $phone-wide)
@@ -37,6 +38,8 @@
   .description
     width: 30%
     animation: pageLoadAnimation 1.6s ease-in-out
+    white-space: normal
+    word-wrap: break-word
     @media screen and (max-width: $phone-wide)
       width: 95%
       margin-top: 5%
@@ -48,6 +51,7 @@
       font-family: AlfaSlabOne-Regular,  sans-serif
     p
       font-family: RobotoLight, sans-serif
+      font-size: 12px
     .video-published
       color: $subheading
     .video-info

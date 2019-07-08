@@ -1,5 +1,5 @@
 <div class="video-list-wrapper">
-  <div class="video-item-wrapper" *ngFor="let video of videos">
+  <div class="video-item-wrapper" *ngFor="let video of videos" @opacity>
     <div class="preview-window">
       <img class="thumbnail" src="{{video.snippet.thumbnails.medium.url}}"/>
       <div class="overlay">

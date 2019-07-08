@@ -25,7 +25,7 @@ export class PlayerComponent implements OnInit, OnDestroy {
   public videoDes: string;
 
 
-  private unsubscribe$: Subject<any> = new Subject();
+  private _unsubscribe: Subject<any> = new Subject();
   private _subscription: Subscription;
   private _musicPlayerServiceSubscription: Subscription;
 
@@ -46,12 +46,12 @@ export class PlayerComponent implements OnInit, OnDestroy {
 
     });
 
-    this._musicPlayerServiceSubscription = this._musicPlayerService.getVideosForChannel().pipe(takeUntil(this.unsubscribe$))
+    this._musicPlayerServiceSubscription = this._musicPlayerService.getVideosForChannel().pipe(takeUntil(this._unsubscribe))
       .subscribe(list => {
         for (let element of list['items']) {
           this.videos.push(element);
         }
-        this._getVideoDetails();
+         this._getVideoDetails();
       });
 
   }

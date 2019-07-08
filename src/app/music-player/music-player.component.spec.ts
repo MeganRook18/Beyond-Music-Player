@@ -2,6 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MusicPlayerComponent } from './music-player.component';
 import {MusicPlayerService} from './music-player.service';
+import {RouterModule} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
 
 describe('MusicPlayerComponent', () => {
   let component: MusicPlayerComponent;
@@ -9,6 +11,10 @@ describe('MusicPlayerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+          RouterModule,
+          HttpClientModule
+      ],
       declarations: [ MusicPlayerComponent ],
       providers: [MusicPlayerService]
     })
